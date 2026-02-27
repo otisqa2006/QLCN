@@ -1,0 +1,7 @@
+name = "qlcn"
+pages_build_output_dir = "dist"
+compatibility_date = "2024-08-21"
+
+[vars]
+VITE_SUPABASE_URL = "https://placeholder-project.supabase.co"
+VITE_SUPABASE_ANON_KEY = "placeholder-key-do-not-commit"
