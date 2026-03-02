@@ -6,12 +6,20 @@ export default defineConfig({
         react(),
         VitePWA({
             registerType: 'autoUpdate',
-            includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-icon.svg'],
+            injectRegister: 'auto',
+            includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-icon.svg', 'pwa-192x192.png', 'pwa-512x512.png'],
+            workbox: {
+                globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
+                cleanupOutdatedCaches: true,
+                clientsClaim: true,
+            },
             manifest: {
-                name: 'QLCN',
-                short_name: 'QLCN',
-                description: 'Quản lý cá nhân - Modern Web App',
-                theme_color: '#ffffff',
+                name: 'Sổ Tay Nông Vụ',
+                short_name: 'Nông Vụ',
+                description: 'Ứng dụng quản lý nông vụ Offline',
+                theme_color: '#10b981',
+                background_color: '#f8fafc',
+                display: 'standalone',
                 icons: [
                     {
                         src: 'pwa-192x192.png',
@@ -21,7 +29,8 @@ export default defineConfig({
                     {
                         src: 'pwa-512x512.png',
                         sizes: '512x512',
-                        type: 'image/png'
+                        type: 'image/png',
+                        purpose: 'any maskable'
                     }
                 ]
             }
